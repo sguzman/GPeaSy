@@ -16,7 +16,33 @@ export class Map {
   constructor(public navCtrl: NavController, public geo: Geolocation) {
   }
 
-  loadMap(){
+  public addMarker(): void {
+
+    const marker = new google.maps.Marker({
+      map: this.map,
+      animation: google.maps.Animation.DROP,
+      position: this.map.getCenter()
+    });
+
+    const content = "<h4>Information!</h4>";
+
+    this.addInfoWindow(marker, content);
+
+  }
+
+  private addInfoWindow(marker, content): void {
+
+    const infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+
+    google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker);
+    });
+
+  }
+
+  private loadMap(){
     this.geo.getCurrentPosition().then((position) => {
 
       const latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
