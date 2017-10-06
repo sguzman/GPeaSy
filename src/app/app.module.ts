@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {Geolocation} from "@ionic-native/geolocation";
 
 import {Map} from "../pages/map/map";
 
@@ -25,6 +26,7 @@ import {Map} from "../pages/map/map";
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
