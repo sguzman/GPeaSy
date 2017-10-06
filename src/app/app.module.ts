@@ -6,9 +6,12 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import {Map} from "../pages/map/map";
+
 @NgModule({
   declarations: [
     MyApp,
+    Map
   ],
   imports: [
     BrowserModule,
