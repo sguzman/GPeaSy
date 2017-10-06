@@ -1,5 +1,4 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {NavController, NavParams} from "ionic-angular";
 import {Geolocation} from "@ionic-native/geolocation";
 
 declare var google;
@@ -13,7 +12,7 @@ export class Map {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
 
-  constructor(public navCtrl: NavController, public geo: Geolocation) {
+  constructor(public geo: Geolocation) {
   }
 
   public addMarker(): void {
